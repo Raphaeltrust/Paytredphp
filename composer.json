@@ -2,9 +2,6 @@
     "name": "raphaeltrust/paytredphp",
     "description": "Official PHP library for Paytred API",
     "type": "library",
-    "require": {
-        "php": "5"
-    },
     "autoload": {
         "psr-4": {
             "Raphaeltrust\\Paytredphp\\": "src/"
