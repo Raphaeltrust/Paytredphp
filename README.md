@@ -17,7 +17,7 @@ When the payment is successful, we will call your callback URL (as setup in your
 
 # Using the API
 ## Check your Paytred wallet balance 
-
+The endpoint for checking wallet balance is [/balance]
 
     <?php
     $paytred = new \Raphaeltrust\Paytredphp\PaytredApi('https://api.paytred.com/v1/balance','YOUR_API_KEY'); 
@@ -31,4 +31,32 @@ When the payment is successful, we will call your callback URL (as setup in your
     // catch errors
     die(sprintf('Http error %s with code %d', $ex->getMessage(), $ex->getCode()));
     }
+    
 A JSON response will be returned.
+
+## Create a new product token
+The endpoint for creating a new product token is [/create-token]
+Required fields:
+* product_name: (string)/ Name of the product
+* product_amount: (float)/ The product amount
+* product_type: (int)/ The type of product. (1) Physical Product (2) Digital Product (3) Service
+* product_timeframe: (int)/ Number of days
+
+    $paytred = new \Raphaeltrust\Paytredphp\PaytredApi('https://api.paytred.com/v1/create-token','YOUR_API_KEY');
+    try {
+    //fields
+    $response = $paytred([
+        'product_name' => 'Mecury Photo Art',
+        'product_amount' => 50000,
+        'product_type' => 1,
+        'product_timeframe' => 30,
+
+    ]);
+    //print response
+    echo $response;
+    } catch (\RuntimeException $ex) {
+
+    // catch errors
+    die(sprintf('Http error %s with code %d', $ex->getMessage(), $ex->getCode()));
+    }
+     
