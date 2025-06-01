@@ -1,0 +1,15 @@
+{
+    "name": "raphaeltrust/paytredphp",
+    "description": "Official PHP library for Paytred API",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Raphaeltrust\\Paytredphp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Raphael Akpofure"
+        }
+    ]
+}
